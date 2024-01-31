@@ -1,0 +1,19 @@
+
+server:
+  port: 8890
+
+spring:
+  # application name + yml ?? ??
+  application:
+    name: test
+  profiles:
+    active: dev
+  # spring config-server ?? ?? optional:{server uri}
+  config:
+    import: optional:configserver:http://localhost:8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
