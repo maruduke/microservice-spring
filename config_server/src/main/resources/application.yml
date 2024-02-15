@@ -13,6 +13,8 @@ spring:
       server:
         git:
           uri: "https://github.com/maruduke/msa-config-repo"
+          basedir: StompChat
+          search-paths: dev
 
 
 management:
