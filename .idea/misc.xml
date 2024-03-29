@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ExternalStorageConfigurationManager" enabled="true" />
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/config-client" />
+    <file type="web" url="file://$PROJECT_DIR$/config_server" />
+    <file type="web" url="file://$PROJECT_DIR$/Eureka" />
     <file type="web" url="file://$PROJECT_DIR$/Gateway" />
+    <file type="web" url="file://$PROJECT_DIR$/OAuth2" />
+    <file type="web" url="file://$PROJECT_DIR$/Service1" />
+    <file type="web" url="file://$PROJECT_DIR$/StompChat" />
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" project-jdk-name="corretto-17 (2)" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="corretto-17" project-jdk-type="JavaSDK" />
+  <component name="ProjectType">
+    <option name="id" value="jpab" />
+  </component>
 </project>

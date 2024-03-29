@@ -1,0 +1,26 @@
+# docker-compose 버전
+version: '3.1'
+services:
+  # 서비스 명
+  zookeeper:
+    # 사용할 이미지
+    image: wurstmeister/zookeeper
+    container_name: zookeeper
+    # 사용 포트
+    ports:
+      - '2181:2181'
+  # 서비스 명
+  kafka:
+    # 사용할 이미지
+    image: wurstmeister/kafka
+    container_name: kafka
+    ports:
+      - '9092:9092'
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: localhost
+      # zookeeper(서비스이름):2181(컨테이너내부포트) 로 대상을 지정
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+
+# 실행: docker-compose -f docker-compose.yml up -d
+

@@ -1,0 +1,15 @@
+server:
+  port: 9000
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: google-id
+            client-secret: google-secret
+            redirect-url: 'redirect-url'
+
+
+
