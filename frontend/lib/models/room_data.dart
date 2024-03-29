@@ -1,9 +1,9 @@
 class Room {
-  late final int id;
-  late final String name;
+  late final int roomId;
+  late final String roomName;
 
   Room.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    name = json['name'];
+    roomId = json['roomId'];
+    roomName = json['roomName'];
   }
 }

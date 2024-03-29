@@ -1,5 +1,5 @@
 
-# server port: 8888 ??
+# server port: 8888
 server:
   port: 8888
 
@@ -13,7 +13,8 @@ spring:
       server:
         git:
           uri: "https://github.com/maruduke/msa-config-repo"
-          basedir: StompChat
+          # basedir은 프로젝트 이름과 다르게 해라 파일 다 날릴뻔 했다.
+          basedir: stomp
           search-paths: dev
 
 

@@ -6,30 +6,38 @@ class CreateRoomScreen extends StatelessWidget {
 
   final roomNameController = TextEditingController();
 
-  final RoomService roomService = RoomService();
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('방 생성'),
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(3.0),
-        child: Row(
-          children: [
-            TextField(controller: roomNameController),
-            TextButton(
-              onPressed: () {
-                var roomName = roomNameController.text;
-                // 서버에 데이터 전송 작성 (id 생성 + roomName 데이터)
-                roomService.createRoom(roomName);
-                Navigator.pop(context);
-              },
-              child: const Text('방 생성하기'),
+      body: Column(
+        children: [
+          const SizedBox(
+            height: 30,
+          ),
+          const Text('build'),
+          TextField(
+            controller: roomNameController,
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+              labelText: 'Room name',
             ),
-          ],
-        ),
+          ),
+          const SizedBox(
+            height: 30,
+          ),
+          TextButton(
+            onPressed: () {
+              var roomName = roomNameController.text;
+              // 서버에 데이터 전송 작성 (id 생성 + roomName 데이터)
+              RoomService.createRoom(roomName);
+              Navigator.pop(context);
+            },
+            child: const Text('방 생성하기'),
+          ),
+        ],
       ),
     );
   }

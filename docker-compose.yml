@@ -20,4 +20,7 @@ services:
       KAFKA_ADVERTISED_HOST_NAME: localhost
       # zookeeper(서비스이름):2181(컨테이너내부포트) 로 대상을 지정
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+
 # 실행: docker-compose -f docker-compose.yml up -d
+

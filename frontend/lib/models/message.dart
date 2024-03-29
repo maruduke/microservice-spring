@@ -13,9 +13,9 @@ class Message {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['roomId'] = roomId;
-    data['message'] = message;
     data['senderName'] = senderName;
+    data['message'] = message;
+    data['roomId'] = roomId;
     return data;
   }
 }

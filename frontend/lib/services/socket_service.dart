@@ -39,6 +39,7 @@ class SocketService {
 
   void onConnect(StompFrame stompFrame) {
     // 연결 함수
+    print(stompFrame.headers['session']);
     debugPrint("Connect Server");
   }
 
@@ -46,25 +47,19 @@ class SocketService {
     debugPrint('Disconnect Server');
   }
 
-  void subscribe(int topic) {
+  void subscribe(int topic, Function receive) {
     // topic 구독 및 해당 토픽에서 데이터 수신 시 callback 함수 수행
 
     stompClient.subscribe(
       destination: '$url/$service/topic/$topic',
-      callback: receiveMessage,
+      callback: (frame) => receive(frame),
     );
-  }
-
-  void receiveMessage(StompFrame stompFrame) {
-    var message = Message.fromJson(jsonDecode(stompFrame.body!));
-    print(message);
   }
 
   void send(Message message) {
     // 메시지 전송
-
     stompClient.send(
-      destination: 'destination',
+      destination: '$url/$service/api/chat/message',
       body: jsonEncode(message.toJson()),
       headers: {},
     );
