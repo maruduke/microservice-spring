@@ -1,0 +1,19 @@
+
+server:
+  port: 8890
+
+spring:
+  # application name + yml -> test-{profiles}.yml config file을 가져옴
+  application:
+    name: test
+  profiles:
+    active: dev
+  # 가져올 spring config-server uri 정보 optional:configserver:{server uri}
+  config:
+    import: optional:configserver:http://localhost:8888
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
